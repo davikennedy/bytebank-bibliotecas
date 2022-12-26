@@ -14,7 +14,7 @@ namespace ByteBank.SistemaAgencia
         {
             if (String.IsNullOrEmpty(url)) 
             {
-                throw new ArgumentException("O argumento url não pode ser nulo ou vazi.", nameof(url));
+                throw new ArgumentException("O argumento url não pode ser nulo ou vazio.", nameof(url));
             }
 
             URL = url;
@@ -24,8 +24,18 @@ namespace ByteBank.SistemaAgencia
         }
         public string GetValor(string nomeParametro)
         {
-            return "";
-            //int indiceParametro = _argumentos.IndexOf(nomeParametro);
+            string termo = nomeParametro + "=";
+            int indiceTermo = _argumentos.IndexOf(termo);
+
+            string resultado = _argumentos.Substring(indiceTermo + termo.Length);
+            int indiceEComercial = resultado.IndexOf('&');
+
+            if (indiceEComercial == -1)
+            {
+                return resultado;
+            }
+
+            return resultado.Remove(indiceEComercial);
         }
     }
 }

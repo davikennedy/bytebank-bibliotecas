@@ -22,7 +22,7 @@ namespace ByteBank.SistemaAgencia
             Console.WriteLine(mensagem);
             Console.WriteLine(dataFimPagamento);*/
 
-            Object conta = new ContaCorrente(555, 24);
+            /*Object conta = new ContaCorrente(555, 24);
             Console.WriteLine(conta);
             Console.ReadLine();
 
@@ -35,9 +35,28 @@ namespace ByteBank.SistemaAgencia
             string valorMoedaDestino = extratorDeValores.GetValor("moedaDestino");
             Console.WriteLine($"Valor de moeda destino: {valorMoedaDestino}");
 
-            Console.WriteLine(extratorDeValores.GetValor("Valor"));
+            Console.WriteLine(extratorDeValores.GetValor("Valor"));*/
+
+            ListaDeContaCorrente lista = new ListaDeContaCorrente();
+            lista.Adicionar(new ContaCorrente(874, 1234));
+            lista.Adicionar(new ContaCorrente(874, 1234));
+            lista.Adicionar(new ContaCorrente(874, 1234));
 
             Console.ReadLine();
+        }
+        static void TestaArrayDeContaCorrente()
+        {
+            ContaCorrente[] contas =
+            {
+                    new ContaCorrente(25, 455),
+                    new ContaCorrente(25, 456),
+                    new ContaCorrente(25, 457)
+                };
+
+            foreach (ContaCorrente conta in contas)
+            {
+                Console.WriteLine(conta);
+            }
         }
     }
 }

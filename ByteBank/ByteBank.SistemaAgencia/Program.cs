@@ -38,6 +38,10 @@ namespace ByteBank.SistemaAgencia
             Console.WriteLine(extratorDeValores.GetValor("Valor"));*/
 
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
+
+            ContaCorrente contaDoGui = new ContaCorrente(546, 142341);
+            lista.Adicionar(contaDoGui);
+
             lista.Adicionar(new ContaCorrente(874, 1234));
             lista.Adicionar(new ContaCorrente(874, 1234));
             lista.Adicionar(new ContaCorrente(874, 1234));
@@ -53,6 +57,8 @@ namespace ByteBank.SistemaAgencia
             lista.Adicionar(new ContaCorrente(874, 1234));
             lista.Adicionar(new ContaCorrente(874, 1234));
             lista.Adicionar(new ContaCorrente(874, 1234));
+
+            lista.Remover(contaDoGui);
 
             Console.ReadLine();
         }

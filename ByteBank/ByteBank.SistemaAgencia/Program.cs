@@ -60,7 +60,12 @@ namespace ByteBank.SistemaAgencia
 
             lista.Remover(contaDoGui);
 
-            lista.Imprimir();
+            for (int i = 0; i < lista.Tamanho; i++)
+            {
+                ContaCorrente itemAtual = lista.GetContaCorrenteNoIndice(i);
+                Console.WriteLine($"Item na posição {i} = {itemAtual}");
+            }
+            //lista.Imprimir();
 
             Console.ReadLine();
         }

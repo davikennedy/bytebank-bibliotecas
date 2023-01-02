@@ -74,5 +74,15 @@ namespace ByteBank.SistemaAgencia
             _proximaPosicao--;
             _itens[_proximaPosicao] = null;
         }
+
+        public void Imprimir()
+        {
+            Console.WriteLine("\nImprimindo lista:");
+
+            foreach(ContaCorrente item in _itens)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }

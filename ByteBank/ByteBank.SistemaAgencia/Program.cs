@@ -60,6 +60,8 @@ namespace ByteBank.SistemaAgencia
 
             lista.Remover(contaDoGui);
 
+            lista.Imprimir();
+
             Console.ReadLine();
         }
         static void TestaArrayDeContaCorrente()

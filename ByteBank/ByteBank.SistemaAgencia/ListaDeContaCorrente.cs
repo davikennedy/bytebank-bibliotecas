@@ -56,6 +56,14 @@ namespace ByteBank.SistemaAgencia
             _itens = novoArray;
         }
 
+        public void AdicionarVariasContas(ContaCorrente[] contas)
+        {
+            foreach (ContaCorrente conta in contas)
+            {
+                Adicionar(conta);
+            }
+        }
+
         public void Remover(ContaCorrente item)
         {
             int indiceItem = -1;

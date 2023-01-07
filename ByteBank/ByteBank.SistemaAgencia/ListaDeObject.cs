@@ -56,7 +56,11 @@ namespace ByteBank.SistemaAgencia
             _itens = novoArray;
         }
 
+<<<<<<< HEAD
         public void AdicionarVariosItens(params object[] itens)
+=======
+        public void AdicionarVariasContas(params object[] itens)
+>>>>>>> cf656d434354d95b6fc83753fba339cb234dc4ab
         {
             foreach (object item in itens)
             {

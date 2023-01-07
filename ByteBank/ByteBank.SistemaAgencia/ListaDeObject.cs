@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace ByteBank.SistemaAgencia
 {
-    public class ListaDeContaCorrente
+    public class ListaDeObject
     {
-        private ContaCorrente[] _itens;
+        private object[] _itens;
         private int _proximaPosicao;
         public int Tamanho
         {
             get { return _proximaPosicao; }
         }
 
-        public ListaDeContaCorrente(int capacidadeInicial = 5)
+        public ListaDeObject(int capacidadeInicial = 5)
         {
-            _itens = new ContaCorrente[capacidadeInicial];
+            _itens = new object[capacidadeInicial];
             _proximaPosicao = 0;
         }
 
-        public void Adicionar(ContaCorrente item)
+        public void Adicionar(object item)
         {
             VerificarCapacidade(_proximaPosicao + 1);
             //Console.WriteLine($"Adicionando item na posição {_proximaPosicao}");
@@ -45,7 +45,7 @@ namespace ByteBank.SistemaAgencia
 
             //Console.WriteLine("Aumentando capacidade da lista!");
 
-            ContaCorrente[] novoArray = new ContaCorrente[novoTamanho];
+            object[] novoArray = new object[novoTamanho];
 
             for (int indice = 0; indice < _itens.Length; indice++)
             {
@@ -56,21 +56,21 @@ namespace ByteBank.SistemaAgencia
             _itens = novoArray;
         }
 
-        public void AdicionarVariasContas(params ContaCorrente[] contas)
+        public void AdicionarVariasContas(params object[] itens)
         {
-            foreach (ContaCorrente conta in contas)
+            foreach (object item in itens)
             {
-                Adicionar(conta);
+                Adicionar(item);
             }
         }
 
-        public void Remover(ContaCorrente item)
+        public void Remover(object item)
         {
             int indiceItem = -1;
 
             for (int i = 0; i < _proximaPosicao; i++)
             {
-                ContaCorrente itemAtual = _itens[i];
+                object itemAtual = _itens[i];
                 if (itemAtual.Equals(item))
                 {
                     indiceItem = i;
@@ -87,7 +87,7 @@ namespace ByteBank.SistemaAgencia
             _itens[_proximaPosicao] = null;
         }
 
-        private ContaCorrente GetItemNoIndice(int indice)
+        private object GetItemNoIndice(int indice)
         {
             if (indice < 0 || indice >= _proximaPosicao)
             {
@@ -97,7 +97,7 @@ namespace ByteBank.SistemaAgencia
             return _itens[indice];
         }
 
-        public ContaCorrente this[int indice]
+        public object this[int indice]
         {
             get { return GetItemNoIndice(indice); }
         }
@@ -106,7 +106,7 @@ namespace ByteBank.SistemaAgencia
         {
             Console.WriteLine("\nImprimindo lista:");
 
-            foreach (ContaCorrente item in _itens)
+            foreach (object item in _itens)
             {
                 Console.WriteLine(item);
             }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
+using ByteBank.SistemaAgencia.Extensoes;
 using Humanizer;
 
 namespace ByteBank.SistemaAgencia
@@ -69,7 +70,7 @@ namespace ByteBank.SistemaAgencia
             idades.Add(5);
             idades.Add(6);
             idades.Add(7);
-            ListExtensoes.AdicionarVariosItens(idades, 1, 2, 3);
+            idades.AdicionarVariosItens(5, 4, 3);
         }
 
         static void TestaListaDeObject()

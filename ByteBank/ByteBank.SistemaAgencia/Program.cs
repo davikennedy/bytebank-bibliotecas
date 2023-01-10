@@ -65,12 +65,42 @@ namespace ByteBank.SistemaAgencia
 
             Console.ReadLine();*/
 
-            List<int> idades = new List<int>();
+        }
 
-            idades.Add(5);
-            idades.Add(6);
-            idades.Add(7);
-            idades.AdicionarVariosItens(5, 4, 3);
+        static void TestaSort()
+        {
+            var nomes = new List<string>()
+            {
+                "Wellington",
+                "Guilherme",
+                "Luana",
+                "Marcos",
+                "Rogério",
+                "Ana"
+            };
+
+            nomes.Sort();
+
+            foreach (var nome in nomes)
+            {
+                Console.WriteLine(nome);
+            }
+
+            var idades = new List<int>();
+
+            idades.Add(51);
+            idades.Add(23);
+            idades.Add(72);
+            idades.AdicionarVariosItens(99, -1, 15, 4);
+
+            idades.Sort();
+
+            foreach (var idade in idades)
+            {
+                Console.WriteLine(idade);
+            }
+
+            Console.ReadLine();
         }
 
         static void TestaListaDeObject()

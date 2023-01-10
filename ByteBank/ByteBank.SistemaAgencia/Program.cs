@@ -64,12 +64,12 @@ namespace ByteBank.SistemaAgencia
 
             Console.ReadLine();*/
 
-            Lista<int> idades = new Lista<int>();
+            List<int> idades = new List<int>();
 
-            idades.Adicionar(5);
-            idades.Adicionar(6);
-            idades.Adicionar(7);
-            idades.AdicionarVariosItens(15, 18, 51);
+            idades.Add(5);
+            idades.Add(6);
+            idades.Add(7);
+            ListExtensoes.AdicionarVariosItens(idades, 1, 2, 3);
         }
 
         static void TestaListaDeObject()

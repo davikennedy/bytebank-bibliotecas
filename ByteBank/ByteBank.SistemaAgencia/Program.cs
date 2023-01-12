@@ -65,6 +65,22 @@ namespace ByteBank.SistemaAgencia
 
             Console.ReadLine();*/
 
+            var contas = new List<ContaCorrente>()
+            {
+                new ContaCorrente(832, 54255),       
+                new ContaCorrente(633, 54258),
+                new ContaCorrente(272, 54256),
+                new ContaCorrente(351, 54257)
+            };
+
+            contas.Sort();
+
+            foreach (var conta in contas)
+            {
+                Console.WriteLine($"Conta número {conta.Numero}, Agência {conta.Agencia}");
+            }
+
+            Console.ReadKey();
         }
 
         static void TestaSort()
@@ -102,7 +118,7 @@ namespace ByteBank.SistemaAgencia
 
             Console.ReadLine();
         }
-
+        
         static void TestaListaDeObject()
         {
             ListaDeObject listaDeIdades = new ListaDeObject();
@@ -121,6 +137,7 @@ namespace ByteBank.SistemaAgencia
 
             Console.ReadKey();
         }
+        
         static void TestaArrayDeContaCorrente()
         {
             ContaCorrente[] contas =

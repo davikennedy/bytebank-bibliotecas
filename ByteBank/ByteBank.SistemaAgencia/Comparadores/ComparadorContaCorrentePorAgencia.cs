@@ -11,6 +11,8 @@ namespace ByteBank.SistemaAgencia.Comparadores
     {
         public int Compare(ContaCorrente x, ContaCorrente y)
         {
+            //Esse tipo de comparação é equivalente ao que já existe no tipo 'int'
+            // return x.Agencia.CompareTo(y.Agencia)
             if (x == y)
             {
                 return 0;
